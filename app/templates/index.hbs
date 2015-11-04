@@ -1,0 +1,37 @@
+<h4>Authors</h4>
+
+<ul>
+  {{#each model.authors as |author|}}
+    <li>{{author.firstName}}</li>
+    {{#if author.posts}}
+      <ul>
+      {{#each author.posts as |post|}}
+        <li>{{post.title}}</li>
+        {{#if post.comments}}
+          <ul>
+            {{#each post.comments as |comment|}}
+              <li>{{comment.text}}</li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      {{/each}}
+      </ul>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h4>Posts</h4>
+
+<ul>
+  {{#each model.posts as |post|}}
+    <li>{{post.title}}</li>
+  {{/each}}
+</ul>
+
+<h4>Comments</h4>
+
+<ul>
+  {{#each model.comments as |comment|}}
+    <li>{{comment.text}}</li>
+  {{/each}}
+</ul>
