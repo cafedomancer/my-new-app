@@ -5,7 +5,6 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       authors: this.store.findAll('author'),
       posts: this.store.findAll('post'),
-      comments: this.store.findAll('comment')
     });
   }
 });
