@@ -1,7 +1,11 @@
 export default function(server) {
-  let author = server.schema.author.create({ firstName: 'Link' });
-  let post = server.schema.post.create({ title: 'Ipsum' });
+  let author;
 
-  author.post = post;
-  post.author = author;
+  author = server.schema.author.create({ firstName: 'Link' });
+  author.createPost({ title: 'Lorem' });
+  author.createPost({ title: 'Ipsum' });
+
+  author = server.schema.author.create({ firstName: 'Zelda' });
+  author.createPost({ title: 'Quid' });
+  author.createPost({ title: 'Novi' });
 }
