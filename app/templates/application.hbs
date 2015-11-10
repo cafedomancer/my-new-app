@@ -4,7 +4,7 @@
 
 <ul>
   {{#each model.authors as |author|}}
-  <li>{{author.firstName}} {{author.lastName}}</li>
+  <li>{{author.firstName}} {{author.etCetera.lastName}}</li>
     {{#if author.posts}}
     <ul>
       {{#each author.posts as |post|}}

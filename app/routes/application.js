@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     add() {
       this.store.createRecord('author', {
         firstName: 'Ganon',
-        lastName: 'Dragmire'
+        etCetera: { lastName: 'Dragmire' }
       }).save();
     },
 
