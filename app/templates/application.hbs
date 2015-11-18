@@ -4,7 +4,7 @@
 
 <ul>
   {{#each model.authors as |author|}}
-  <li>{{author.firstName}} {{author.etCetera.lastName}}</li>
+  <li>{{author.firstName}}</li>
     {{#if author.posts}}
     <ul>
       {{#each author.posts as |post|}}
@@ -15,13 +15,16 @@
   {{/each}}
 </ul>
 
-<button {{action 'add'}}>Add</button>
-<button {{action 'clear'}}>Clear</button>
-
 <h4>Posts</h4>
 
 <ul>
   {{#each model.posts as |post|}}
-    <li>{{post.title}}</li>
+    <li>{{post.title}} {{if post.author (concat 'written by ' post.author.firstName)}}</li>
   {{/each}}
 </ul>
+
+<h4>Operations</h4>
+
+<button {{action 'promise'}}>Promise</button>
+<button {{action 'sequence'}}>Sequence</button>
+<button {{action 'reload'}}>Reload</button>
