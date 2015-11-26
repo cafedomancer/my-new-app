@@ -22,9 +22,3 @@
     <li>{{post.title}} {{if post.author (concat 'written by ' post.author.firstName)}}</li>
   {{/each}}
 </ul>
-
-<h4>Operations</h4>
-
-<button {{action 'promise'}}>Promise</button>
-<button {{action 'sequence'}}>Sequence</button>
-<button {{action 'reload'}}>Reload</button>
